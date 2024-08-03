@@ -1,0 +1,45 @@
+<div class="p-5 text-center ">
+    <h1>GALLERY SECTION</h1>
+    <div class="row text-center ">
+  
+        <div class=" fa text-center text-xl fa-2x ">---- <i class="fa fa-star  "> ----</i></div>   
+              
+    </div>
+</div>
+
+
+
+
+<!-- -->
+<div class="container">
+
+    <div class="row g-4">
+        
+  @for(x of productlist ;track $index){
+    <div class="col-md-4 rounded-2">
+        <div class="p-2 bg-primary rounded-2 w-100">
+            <img src={{x.pimage}} class="w-100 rounded-2 port" alt="House" />
+            <div>
+               <h6> ProdName: {{x.pname}}</h6>
+               <p>Prod category: {{x.pcat}} </p>
+               <p>Prod Price: {{x.pprice}} $ </p>
+               
+            </div>
+        </div>
+    </div>
+  }
+
+
+
+
+        </div>
+    </div>
+<!--  -->
+
+<div #R class = "bg-success text-center m-3">
+    <h2 > Recomended Product </h2>
+</div>
+
+@defer(on viewport(R)){
+    <app-recommended></app-recommended>
+}
